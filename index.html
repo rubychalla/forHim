@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <section id="page1" class="page active">
+    <h1>I love you ❤️</h1>
+    <button onclick="goToCard()">I love you too</button>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section id="page2" class="page">
+    <div class="card-container">
+      <div class="card" onclick="flipCard()">
+        <div class="card-front">
+          <img src="images/us1.jpeg" alt="the msg">
+        </div>
+        <div class="card-back">
+          <p>
+            You are my safe place,<br>
+            my happiness,<br>
+            and my favorite person 🤍
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="tap-text">Tap the heart 💖</p>
+    <button class="heart-btn" onclick="createHearts()">❤️</button>
+  </section>
+
+  <!-- HEARTS ONLY -->
+  <div id="hearts-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

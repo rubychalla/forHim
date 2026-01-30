@@ -1,0 +1,140 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+  height: 100vh;
+  background: #ffc0cb;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* PAGE 1 */
+#page1 h1 {
+  font-size: 2.5rem;
+  color: #8b0000;
+  margin-bottom: 20px;
+}
+
+#page1 button {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+/* FLIP CARD */
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 280px;
+  height: 180px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FRONT IMAGE */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* PERFECT FIT */
+  border-radius: 15px;
+}
+
+/* BACK TEXT */
+.card-back {
+  background: #ffccd5;
+  transform: rotateY(180deg);
+  padding: 15px;
+  font-size: 1rem;
+  color: #8b0000;
+}
+
+/* HEART BUTTON */
+.tap-text {
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.heart-btn {
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* FLOATING HEARTS */
+#hearts-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
