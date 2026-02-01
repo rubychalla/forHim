@@ -127,6 +127,10 @@ body {
   bottom: -20px;
   animation: floatUp 4s linear forwards;
 }
+.heart svg {
+  width: 24px;
+  height: 24px;
+}
 
 @keyframes floatUp {
   from {
@@ -134,7 +138,7 @@ body {
     opacity: 1;
   }
   to {
-    transform: translateY(-110vh);
+    transform: translateY(-120vh);
     opacity: 0;
   }
 }
